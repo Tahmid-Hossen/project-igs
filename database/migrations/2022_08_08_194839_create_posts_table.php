@@ -17,8 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('image');
-            $table->string('file');
+            $table->string('image')->nullable();
+            $table->string('document')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

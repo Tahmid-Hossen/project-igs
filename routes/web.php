@@ -26,6 +26,8 @@ Route::get('admin/login', 'Admin\LoginController@showLoginForm');
 Route::post('admin/login', 'admin\LoginController@login')->name('admin.login');
 Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
+Route::get('create/post', 'AdminController@createPost')->name('create.post');
+Route::post('store/post', 'AdminController@storePost')->name('store.post');
 
 // $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 // $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

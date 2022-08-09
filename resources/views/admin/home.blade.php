@@ -8,13 +8,13 @@
                 <div class="card-header">Admin Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You're logged in as an Admin
+                    <div class="admin-list">
+                        Check admin Panel List
+                        <ul>
+                            <li><a href="{{ route('create.post') }}">Create Post</a></li>
+                            <li><a href="">All Post</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
