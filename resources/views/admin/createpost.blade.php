@@ -10,18 +10,19 @@
                     <div class="admin-list">
                         <form action="{{ route('store.post') }}" method="POST" enctype='multipart/form-data'>
                             @csrf
+                            <!-- <input id="ProjectID" name="ProjectID" type="hidden" value=""> -->
                             <div class="form-group">
                                 <label for="title"><b>Enter Title</b></label>
                                 <input type="text" class="form-control" name="title" id="title" aria-describedby="title">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="description"><b>Enter Description</b></label>
                                 <textarea class="form-control" name ="description" id="description" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+                            <!-- <div class="form-group">
                                 <label for="file_image"><b>Upload image</b></label>
                                 <input type="file" name="image" class="file_image" id="image">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="file_file"><b>Upload Documents</b></label>
                                 <input type="file" name="document" class="file_file" id="document">
@@ -34,4 +35,8 @@
         </div>
     </div>
 </div>
+
+<!-- <script type="text/javascript">
+    
+</script> -->
 @endsection

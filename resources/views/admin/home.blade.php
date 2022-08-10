@@ -12,7 +12,7 @@
                         Check admin Panel List
                         <ul>
                             <li><a href="{{ route('create.post') }}">Create Post</a></li>
-                            <li><a href="">All Post</a></li>
+                            <li><a href="{{ route('all.post') }}">All Post</a></li>
                         </ul>
                     </div>
                 </div>

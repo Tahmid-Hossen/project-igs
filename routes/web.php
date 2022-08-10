@@ -27,7 +27,10 @@ Route::post('admin/login', 'admin\LoginController@login')->name('admin.login');
 Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
 Route::get('create/post', 'AdminController@createPost')->name('create.post');
-Route::post('store/post', 'AdminController@storePost')->name('store.post');
+Route::post('post/files', 'AdminController@storePost')->name('store.post');
+Route::get('all/files', 'AdminController@index')->name('all.post');
+Route::get('view/file/{id}', 'AdminController@view')->name('view.post');
+Route::get('delete/files/{id}', 'AdminController@deletePost')->name('delete.post');
 
 // $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 // $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

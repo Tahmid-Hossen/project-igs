@@ -16,17 +16,17 @@ class AdminController extends Controller
         try{
             $post = new Post();
             $post->title = $request->title;
-            $post->description = $request->description;
-            $post->image = $request->image;
+            // $post->description = $request->description;
+            // $post->image = $request->image;
             $post->document = $request->document;
-            if($request->hasFile('image')){
-                $file = $request->file('image');
-                $filename = $file->getClientOriginalName();
-                $picture = \date('His').'-'.$filename;
-                $file->move(\public_path('upload/image'),$picture);
-            } else{
-                return "select image first";
-            }
+            // if($request->hasFile('image')){
+            //     $file = $request->file('image');
+            //     $filename = $file->getClientOriginalName();
+            //     $picture = \date('His').'-'.$filename;
+            //     $file->move(\public_path('upload/image'),$picture);
+            // } else{
+            //     return "select image first";
+            // }
 
             if($request->hasFile('document')){
                 $file = $request->file('document');
