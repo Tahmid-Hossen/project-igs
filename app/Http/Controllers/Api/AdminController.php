@@ -38,8 +38,8 @@ class AdminController extends Controller
             }
             $post->save();
             return response([
-                'post' => $post,
-                'message' => 'post created'
+                // 'post' => $post,
+                'message' => 'file uploaded'
             ]);
 
         } catch(Exception $ex){
@@ -114,5 +114,19 @@ class AdminController extends Controller
                 'message' => $th->getMessage()
             ]);
         }
+    }
+
+    public function getDownload()
+    {
+        //PDF file is stored under project/public/download/info.pdf
+        // $file= public_path('upload/doc');
+        // return $file;
+        return "tahmid";
+
+        // $headers = array(
+        //         'Content-Type: application/pdf',
+        //         );
+
+        // return Response::download($file, 'filename.pdf', $headers);
     }
 }

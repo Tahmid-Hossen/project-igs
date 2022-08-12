@@ -96,4 +96,14 @@ class AdminController extends Controller
         ]);
         // return redirect()->back()->with('success','successfully deleted');
     }
+
+    // $file=$request->file->store(('uploads'),$docfile);
+
+    public function getDownload() {
+        // $file_path = public_path('files/'.$file_name);
+        // $file=public_path('files/'.$file_name);
+        // return response()->download($file);
+        $filepath = public_path('upload/doc/200841-Habiba CV (1).pdf');
+        return Response()->download($filepath);
+      }
 }

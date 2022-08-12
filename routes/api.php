@@ -20,6 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('create/post', 'Api\AdminController@createPost');
 Route::get('/posts', 'Api\AdminController@getPost');
-Route::post('store/post', 'Api\AdminController@storePost');
+Route::post('post/files', 'Api\AdminController@storePost');
 Route::get('update/post/{id}', 'Api\AdminController@updatePost');
-Route::get('delete/post/{id}', 'Api\AdminController@updatePost');
+Route::get('delete/file/{id}', 'Api\AdminController@deletePost');
