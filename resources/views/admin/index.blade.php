@@ -24,7 +24,7 @@
                                 <td>
                                     <a href="{{ route('view.post', $post->id) }}" type="button" class="btn btn-success">View Post</a>
                                     <a href="{{ route('delete.post', $post->id) }}" type="button" class="btn btn-danger">Delete</a>
-                                    <a href="{{ route('download') }}" type="button" class="btn btn-info">Download</a>
+                                    <a href="{{ route('download', $post->document) }}" type="button" class="btn btn-info">Download</a>
                                 </td>
                             </tr>
                             @endforeach

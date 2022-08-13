@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Storage;
 use Auth;
 use App\Models\Post;
+use Storage;
 class AdminController extends Controller
 {
     /**
@@ -45,6 +47,7 @@ class AdminController extends Controller
             // $post->description = $request->description;
             // $post->image = $request->image;
             $post->document = $request->document;
+            // return $request->document;
             // if($request->hasFile('image')){
             //     $file = $request->file('image');
             //     $filename = $file->getClientOriginalName();
@@ -59,6 +62,7 @@ class AdminController extends Controller
                 $filename = $file->getClientOriginalName();
                 $docfile = \date('His').'-'.$filename;
                 $file->move(\public_path('upload/doc'),$docfile);
+                // return $file;
             } else{
                 return "select file first";
             }
@@ -99,11 +103,28 @@ class AdminController extends Controller
 
     // $file=$request->file->store(('uploads'),$docfile);
 
-    public function getDownload() {
+    public function getDownload(Request $request,$document) {
         // $file_path = public_path('files/'.$file_name);
         // $file=public_path('files/'.$file_name);
         // return response()->download($file);
-        $filepath = public_path('upload/doc/200841-Habiba CV (1).pdf');
-        return Response()->download($filepath);
+        // $filepath = public_path('upload/doc/200841-Habiba CV (1).pdf');
+        // return Response()->download($filepath);
+        // if(Storage::disk('public')->exists("upload/doc/$request->file")){
+        //     $path = Storage::disk('public')->path('upload/doc/$request->file');
+        //     $content = file_get_contents($path);
+        //     return response($content)->withHeaders([
+        //         'Content-Type' => mime_content_type($path)
+        //     ]);
+        // }
+        // return redirect('/404');
+
+        
+        // $file = Storage::disk('public')->get($file_name);
+        // return (new Response($file, 200))
+        //         ->header('Content-Type', 'file/pdf');
+
+        // return $document;
+
+        return response()->download(public_path('upload/doc/'.$document));
       }
 }

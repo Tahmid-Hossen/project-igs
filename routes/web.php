@@ -31,7 +31,7 @@ Route::post('post/files', 'AdminController@storePost')->name('store.post');
 Route::get('all/files', 'AdminController@index')->name('all.post');
 Route::get('view/file/{id}', 'AdminController@view')->name('view.post');
 Route::get('delete/files/{id}', 'AdminController@deletePost')->name('delete.post');
-Route::get('/download', 'AdminController@getDownload')->name('download');
+Route::get('/download/{document}', 'AdminController@getDownload')->name('download');
 
 
 // $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
